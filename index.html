@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <section>
+            <h2>Register to Get a Free Pizza!</h2>
+            <form id="pizzaForm">
+                
+                <!-- Personal Information -->
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <label for="name">Name (at least 3 characters):</label>
+                    <input type="text" id="name" name="name" required>
+                    <span class="error" id="nameError"></span>
+
+                    <label for="yearOfBirth">Year of Birth (1901 - <span id="currentYear"></span>):</label>
+                    <input type="number" id="yearOfBirth" name="yearOfBirth" min="1901" required>
+                    <span class="error" id="yearError"></span>
+                </fieldset>
+
+                <!-- Location Information -->
+                <fieldset>
+                    <legend>Location Information</legend>
+
+                    <label>
+                        <input type="checkbox" id="liveInUS"> Do you live in the United States?
+                    </label>
+
+                    <fieldset id="zipCodeContainer" class="hidden">
+                        <legend>Zip Code</legend>
+                        <label for="zipCode">Enter a 5-digit Zip Code:</label>
+                        <input type="text" id="zipCode" name="zipCode">
+                        <span class="error" id="zipCodeError"></span>
+                    </fieldset>
+                </fieldset>
+
+                <!-- Security Information -->
+                <fieldset>
+                    <legend>Security</legend>
+
+                    <label for="password">Password (at least 8 characters):</label>
+                    <input type="password" id="password" name="password" required>
+                    <span class="error" id="passwordError"></span>
+                </fieldset>
+
+                <!-- Pizza Preferences -->
+                <fieldset>
+                    <legend>Pizza Preferences</legend>
+
+                    <label>Preferred Type of Pizza:</label>
+                    <ul>
+                        <li>
+                            <input type="radio" id="withPineapple" name="pizzaType" value="With pineapple">
+                            <label for="withPineapple">With Pineapple</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="withoutPineapple" name="pizzaType" value="Without pineapple">
+                            <label for="withoutPineapple">Without Pineapple</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="noPizza" name="pizzaType" value="I do not like pizza">
+                            <label for="noPizza">I do not like pizza</label>
+                        </li>
+                    </ul>
+                    <span class="error" id="pizzaError"></span>
+                </fieldset>
+
+                <!-- Submission -->
+                <button type="submit">Submit</button>
+            </form>
+
+            <p id="successMessage" class="hidden">Accepted! Your pizza is on its way! 🍕</p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
