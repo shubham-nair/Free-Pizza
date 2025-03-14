@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (liveInUSCheckbox.checked) {
             const zipCode = document.getElementById("zipCode").value.trim();
             const zipCodeError = document.getElementById("zipCodeError");
-            if (!/^\d{5}$/.test(zipCode)) {
-                zipCodeError.textContent = "Invalid Zip Code (must be 5 digits).";
+            if (!/^[1-9]\d{4}$/.test(zipCode)) {
+                zipCodeError.textContent = "Invalid Zip Code (must be a valid 5-digit US zip code).";
                 valid = false;
             } else {
                 zipCodeError.textContent = "";
